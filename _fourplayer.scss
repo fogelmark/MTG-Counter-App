@@ -1,0 +1,164 @@
+.top-content,
+.bottom-content {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+}
+
+.top-left-container,
+.top-right-container,
+.bottom-left-container,
+.bottom-right-container {
+  width: 100%;
+  height: 50vh;
+}
+
+.middle-container {
+  position: absolute;
+  top: 46.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.life {
+  font-size: 4rem;
+}
+
+// .plus,
+// .minus {
+//   cursor: pointer;
+// }
+
+.top-left-container {
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    .plus,
+    .minus {
+      width: 100%;
+      height: 16.6vh;
+      touch-action: manipulation;
+    }
+    
+    .minus {
+      i {
+        transform: rotate(90deg);
+        }
+    }
+  
+    .middle {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 16.6vh;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+      }
+    }
+  } 
+}
+
+.top-right-container {
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    .plus,
+    .minus {
+      width: 100%;
+      height: 16.6vh;
+    }
+    
+    .minus {
+      i {
+        transform: rotate(90deg);
+        }
+    }
+  
+    .middle {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 16.6vh;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-90deg);
+      }
+    }
+  } 
+}
+
+.bottom-left-container {
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    .plus,
+    .minus {
+      width: 100%;
+      height: 16.6vh;
+    }
+    
+    .minus {
+      i {
+        transform: rotate(90deg);
+        }
+    }
+  
+    .middle {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 16.6vh;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+      }
+    }
+  } 
+}
+
+.bottom-right-container {
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    .plus,
+    .minus {
+      width: 100%;
+      height: 16.6vh;
+    }
+    
+    .minus {
+      i {
+        transform: rotate(90deg);
+        }
+    }
+  
+    .middle {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 16.6vh;
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-90deg);
+      }
+    }
+  } 
+}

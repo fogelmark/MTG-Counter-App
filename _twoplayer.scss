@@ -1,0 +1,70 @@
+.top-container,
+.bottom-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  // border-top: 1px solid;
+  height: 50vh;
+  width: 100%;
+  p {
+    font-size: 5em;
+  }
+}
+
+.top-container {
+  transform: rotate(180deg);
+}
+
+.life {
+  width: 33%;
+  text-align: center;
+  font-size: 5em;
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 50vh;
+  touch-action: manipulation;
+}
+
+.minus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 50vh;
+  touch-action: manipulation;
+}
+
+i {
+  cursor: pointer;
+}
+
+.fa-minus, .fa-plus {
+  border: 1px solid;
+  border-radius: 50%;
+  padding: .46895rem .5rem;
+}
+
+.fa-minus {
+  left: 50%;
+}
+
+.fa-gear {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+}

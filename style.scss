@@ -1,7 +1,11 @@
+@import 'twoplayer';
+@import 'fourplayer';
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .wrapper {
@@ -11,69 +15,57 @@
 }
 
 .output {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.top-container,
-.bottom-container {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  border: 1px solid;
-  height: 50vh;
-  width: 100%;
-  p {
-    font-size: 5em;
-  }
 }
 
-input[type=text] {
-  outline: none;
-  border: none;
-  background-color: #aaa;
-  width: 30%;
-  text-align: center;
-  font-size: 5em;
-}
-
-.controls {
+#span-left {
   position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-}
-
-i {
-  cursor: pointer;
-}
-
-.fa-minus, .fa-plus {
-  // position: absolute;
   border: 1px solid;
-  border-radius: 50%;
-  padding: .46895rem .5rem;
+  width: 40%;
+  top: 50%;
+  right: 58%;
 }
 
-.fa-minus {
-  left: 50%;
-}
-
-.fa-gear {
+#span-right {
   position: absolute;
+  border: 1px solid;
+  width: 40%;
+  top: 50%;
+  left: 58%;
 }
 
-.bottom {
-  top: 5%;
-  left: 90%;
+#span-top {
+  position: absolute;
+  border: 1px solid;
+  height: 44%;
+  top: 1.5%;
+  left: 49.7%;
 }
 
-.top {
-  bottom: 5%;
-  right: 90%;
+#span-bottom {
+  position: absolute;
+  border: 1px solid;
+  height: 44%;
+  bottom: 1.5%;
+  left: 49.7%;
+}
+
+.fa-circle-info {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
 }
