@@ -3,7 +3,8 @@
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <meta name="viewport" content="width=device-width, user-scalable=no">
    <script src="https://kit.fontawesome.com/5ffbb1b7d4.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="style.css">
    <title>MTG Counter App</title>
@@ -19,17 +20,28 @@
         <div class="gear-icon">
           <i class="fa-solid fa-gear top"></i>
         </div>
+
         <div class="controls">
-          <i class="fa-solid fa-plus"></i>
-          <input type="text" value="0" readonly>
-          <i class="fa-solid fa-minus"></i>
+          <div class="minus">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+
+          <p class="life">40</p>
+          <div class="plus">
+            <i class="fa-solid fa-plus"></i>
+          </div>
         </div>
   
       </div>
       
-      <div class="mid-container">
-        <!-- <p>*all options will go here*</p> -->
+      <span id="span-left"></span>
+      <div class="middle-container">
+        <a href="/fourplayer.html">
+          <i class="fa-solid fa-circle-info"></i>
+        </a>
       </div>
+      <span id="span-right"></span>
+      
   
       <div class="bottom-container">
   
@@ -37,10 +49,14 @@
           <i class="fa-solid fa-gear bottom"></i>
         </div>
         <div class="controls">
-          <i class="fa-solid fa-minus"></i>
-          <!-- <p>0</p> -->
-          <input type="text" value="0" readonly>
-          <i class="fa-solid fa-plus"></i>
+          <div class="minus">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+
+          <p class="life">40</p>
+          <div class="plus">
+            <i class="fa-solid fa-plus"></i>
+          </div>
         </div>
       </div>
 
@@ -48,6 +64,8 @@
 
 
   </div>
+
+  
 
 <script src="main.js"></script>
 </body>

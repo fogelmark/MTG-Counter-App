@@ -1,22 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.wrapper {
-  height: 100vh;
-  width: 100%;
-  background-color: #aaa;
-}
-
-.output {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .top-container,
 .bottom-container {
   position: relative;
@@ -24,7 +5,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid;
   height: 50vh;
   width: 100%;
 }
@@ -33,11 +13,12 @@
   font-size: 5em;
 }
 
-input[type=text] {
-  outline: none;
-  border: none;
-  background-color: #aaa;
-  width: 30%;
+.top-container {
+  transform: rotate(180deg);
+}
+
+.life {
+  width: 33%;
   text-align: center;
   font-size: 5em;
 }
@@ -45,9 +26,27 @@ input[type=text] {
 .controls {
   position: absolute;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 50vh;
+  touch-action: manipulation;
+}
+
+.minus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 50vh;
+  touch-action: manipulation;
 }
 
 i {
@@ -66,14 +65,214 @@ i {
 
 .fa-gear {
   position: absolute;
-}
-
-.bottom {
   top: 5%;
   left: 90%;
 }
 
-.top {
-  bottom: 5%;
-  right: 90%;
+.top-content,
+.bottom-content {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+}
+
+.top-left-container,
+.top-right-container,
+.bottom-left-container,
+.bottom-right-container {
+  width: 100%;
+  height: 50vh;
+}
+
+.middle-container {
+  position: absolute;
+  top: 46.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.life {
+  font-size: 4rem;
+}
+
+.top-left-container .controls {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+}
+.top-left-container .controls .plus,
+.top-left-container .controls .minus {
+  width: 100%;
+  height: 16.6vh;
+  touch-action: manipulation;
+}
+.top-left-container .controls .minus i {
+  transform: rotate(90deg);
+}
+.top-left-container .controls .middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 16.6vh;
+}
+.top-left-container .controls .middle p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+.top-right-container .controls {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+}
+.top-right-container .controls .plus,
+.top-right-container .controls .minus {
+  width: 100%;
+  height: 16.6vh;
+}
+.top-right-container .controls .minus i {
+  transform: rotate(90deg);
+}
+.top-right-container .controls .middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 16.6vh;
+}
+.top-right-container .controls .middle p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+
+.bottom-left-container .controls {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+}
+.bottom-left-container .controls .plus,
+.bottom-left-container .controls .minus {
+  width: 100%;
+  height: 16.6vh;
+}
+.bottom-left-container .controls .minus i {
+  transform: rotate(90deg);
+}
+.bottom-left-container .controls .middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 16.6vh;
+}
+.bottom-left-container .controls .middle p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+}
+
+.bottom-right-container .controls {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 50%;
+}
+.bottom-right-container .controls .plus,
+.bottom-right-container .controls .minus {
+  width: 100%;
+  height: 16.6vh;
+}
+.bottom-right-container .controls .minus i {
+  transform: rotate(90deg);
+}
+.bottom-right-container .controls .middle {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 16.6vh;
+}
+.bottom-right-container .controls .middle p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: #aaa;
+}
+
+.output {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#span-left {
+  position: absolute;
+  border: 1px solid;
+  width: 40%;
+  top: 50%;
+  right: 58%;
+}
+
+#span-right {
+  position: absolute;
+  border: 1px solid;
+  width: 40%;
+  top: 50%;
+  left: 58%;
+}
+
+#span-top {
+  position: absolute;
+  border: 1px solid;
+  height: 44%;
+  top: 1.5%;
+  left: 49.7%;
+}
+
+#span-bottom {
+  position: absolute;
+  border: 1px solid;
+  height: 44%;
+  bottom: 1.5%;
+  left: 49.7%;
+}
+
+.fa-circle-info {
+  font-size: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
