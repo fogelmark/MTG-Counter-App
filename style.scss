@@ -1,5 +1,6 @@
 @import 'twoplayer';
 @import 'fourplayer';
+@import 'modal';
 
 * {
   padding: 0;
@@ -68,4 +69,12 @@ a:link {
 
 a:visited {
   text-decoration: none;
+}
+
+// .hidden {
+//   visibility: hidden;
+// }
+
+.hidden {
+  display: none;
 }
