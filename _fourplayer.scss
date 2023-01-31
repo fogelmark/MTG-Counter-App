@@ -1,3 +1,29 @@
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin life-text($justify, $align, $degree) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  transform: rotate($degree);
+}
+
+@mixin middle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$red: #eb9f82;
+$green: #c4d3ca;
+$blue: #b3ceea;
+$black: #a69f9d;
+$white: #f8e7b9;
+
 .top-content,
 .bottom-content {
   display: flex;
@@ -13,152 +39,71 @@
   height: 50vh;
 }
 
-.middle-container {
-  position: absolute;
-  top: 46.5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.middle-button {
+  @include flex(center, center);
+  @include middle-button();
+  background-color: black;
+  color: $white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .life {
   font-size: 4rem;
 }
 
-// .plus,
-// .minus {
-//   cursor: pointer;
-// }
+.controls {
+  flex-direction: column;
+  @include flex(space-between, center);
+  width: 50%;
+  .plus,
+  .minus {
+    width: 100%;
+    height: 16.6vh;
+    touch-action: manipulation;
+  }
+
+  .minus {
+    i {
+      transform: rotate(90deg);
+    }
+  }
+
+  .middle {
+    @include flex(center, center);
+    width: 100%;
+    height: 16.6vh;
+  }
+}
 
 .top-left-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-      touch-action: manipulation;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(90deg);
-      }
-    }
-  } 
+  // overflow: hidden;
+  background-color: $blue;
+  p {
+    @include life-text(center, center, 90deg)
+  }
 }
 
 .top-right-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(-90deg);
-      }
-    }
-  } 
+  background-color: $white;
+  p {
+    @include life-text(center, center, -90deg)
+  }
 }
 
 .bottom-left-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(90deg);
-      }
-    }
-  } 
+  background-color: $red;
+  p {
+    @include life-text(center, center, 90deg)
+  }
 }
 
 .bottom-right-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(-90deg);
-      }
-    }
-  } 
+  background-color: $green;
+  p {
+    @include life-text(center, center, -90deg)
+  }
 }
+
