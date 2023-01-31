@@ -26,7 +26,8 @@ $dark-blue: #0077B6;
 $light-blue: #00B4D8;
 $dark-black: #343A40;
 $light-black: #6C757D;
-$white: #fff;
+$dark-white: #FFF2B2;
+$light-white: #FFFAE5;
 
 .top-content,
 .bottom-content {
@@ -43,6 +44,7 @@ $white: #fff;
   height: 50vh;
   color: #f8f6e8;
   text-shadow: 3px 3px 3px #00000036;
+  border: 1px solid black;
 }
 
 i {
@@ -53,7 +55,7 @@ i {
   @include flex(center, center);
   @include middle-button();
   background-color: black;
-  color: $white;
+  color: #fff;
   border: none;
   width: 30px;
   height: 30px;
@@ -74,13 +76,6 @@ i {
     height: 16.6vh;
     touch-action: manipulation;
   }
-
-  // .minus,
-  // .plus {
-  //   i {
-  //     transform: rotate(90deg);
-  //   }
-  // }
 
   .middle {
     @include flex(center, center);
