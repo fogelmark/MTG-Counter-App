@@ -1,3 +1,34 @@
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin life-text($justify, $align, $degree) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  transform: rotate($degree);
+}
+
+@mixin middle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+$dark-red: #85182A;
+$light-red: #B21E35;
+$dark-green: #2D6A4F;
+$light-green: #52B788;
+$dark-blue: #0077B6;
+$light-blue: #00B4D8;
+$dark-black: #343A40;
+$light-black: #6C757D;
+$dark-white: #FFF2B2;
+$light-white: #FFFAE5;
+
 .top-content,
 .bottom-content {
   display: flex;
@@ -11,154 +42,85 @@
 .bottom-right-container {
   width: 100%;
   height: 50vh;
+  color: #f8f6e8;
+  text-shadow: 3px 3px 3px #00000036;
+  border: 1px solid black;
 }
 
-.middle-container {
-  position: absolute;
-  top: 46.5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+i {
+  box-shadow: 3px 3px 3px #00000036;
+}
+
+.middle-button {
+  @include flex(center, center);
+  @include middle-button();
+  background-color: black;
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .life {
   font-size: 4rem;
 }
 
-// .plus,
-// .minus {
-//   cursor: pointer;
-// }
+.controls {
+  flex-direction: column;
+  @include flex(space-between, center);
+  width: 50%;
+  .plus,
+  .minus {
+    width: 100%;
+    height: 16.6vh;
+    touch-action: manipulation;
+  }
+
+  .middle {
+    @include flex(center, center);
+    width: 100%;
+    height: 16.6vh;
+  }
+}
 
 .top-left-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-      touch-action: manipulation;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(90deg);
-      }
-    }
-  } 
+  background: linear-gradient(-90deg, $dark-blue, $light-blue);
+  p {
+    @include life-text(center, center, 90deg)
+  }
+  i {
+    transform: rotate(90deg);
+  }
 }
 
 .top-right-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(-90deg);
-      }
-    }
-  } 
+  background: linear-gradient(90deg, $dark-black, $light-black);
+  p {
+    @include life-text(center, center, -90deg)
+  }
+  i {
+    transform: rotate(-90deg);
+  }
 }
 
 .bottom-left-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(90deg);
-      }
-    }
-  } 
+  background: linear-gradient(-90deg, $dark-red, $light-red);
+  p {
+    @include life-text(center, center, 90deg)
+  }
+  i {
+    transform: rotate(90deg);
+  }
 }
 
 .bottom-right-container {
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width: 50%;
-    .plus,
-    .minus {
-      width: 100%;
-      height: 16.6vh;
-    }
-    
-    .minus {
-      i {
-        transform: rotate(90deg);
-        }
-    }
-  
-    .middle {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 16.6vh;
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: rotate(-90deg);
-      }
-    }
-  } 
+  background: linear-gradient(90deg, $dark-green, $light-green);
+  p {
+    @include life-text(center, center, -90deg)
+  }
+  i {
+    transform: rotate(-90deg);
+  }
 }
+

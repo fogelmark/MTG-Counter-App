@@ -82,126 +82,105 @@ i {
 .bottom-right-container {
   width: 100%;
   height: 50vh;
+  color: #f8f6e8;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2117647059);
+  border: 1px solid black;
 }
 
-.middle-container {
-  position: absolute;
-  top: 46.5%;
+i {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2117647059);
+}
+
+.middle-button {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: #fff;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .life {
   font-size: 4rem;
 }
 
-.top-left-container .controls {
+.controls {
+  flex-direction: column;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  align-items: center;
   width: 50%;
 }
-.top-left-container .controls .plus,
-.top-left-container .controls .minus {
+.controls .plus,
+.controls .minus {
   width: 100%;
   height: 16.6vh;
   touch-action: manipulation;
 }
-.top-left-container .controls .minus i {
-  transform: rotate(90deg);
-}
-.top-left-container .controls .middle {
+.controls .middle {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: 16.6vh;
 }
-.top-left-container .controls .middle p {
+
+.top-left-container {
+  background: linear-gradient(-90deg, #0077B6, #00B4D8);
+}
+.top-left-container p {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  transform: rotate(90deg);
+}
+.top-left-container i {
   transform: rotate(90deg);
 }
 
-.top-right-container .controls {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 50%;
+.top-right-container {
+  background: linear-gradient(90deg, #343A40, #6C757D);
 }
-.top-right-container .controls .plus,
-.top-right-container .controls .minus {
-  width: 100%;
-  height: 16.6vh;
-}
-.top-right-container .controls .minus i {
-  transform: rotate(90deg);
-}
-.top-right-container .controls .middle {
+.top-right-container p {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 16.6vh;
-}
-.top-right-container .controls .middle p {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  transform: rotate(-90deg);
+}
+.top-right-container i {
   transform: rotate(-90deg);
 }
 
-.bottom-left-container .controls {
+.bottom-left-container {
+  background: linear-gradient(-90deg, #85182A, #B21E35);
+}
+.bottom-left-container p {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 50%;
-}
-.bottom-left-container .controls .plus,
-.bottom-left-container .controls .minus {
-  width: 100%;
-  height: 16.6vh;
-}
-.bottom-left-container .controls .minus i {
+  justify-content: center;
+  align-items: center;
   transform: rotate(90deg);
 }
-.bottom-left-container .controls .middle {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 16.6vh;
-}
-.bottom-left-container .controls .middle p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bottom-left-container i {
   transform: rotate(90deg);
 }
 
-.bottom-right-container .controls {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: 50%;
+.bottom-right-container {
+  background: linear-gradient(90deg, #2D6A4F, #52B788);
 }
-.bottom-right-container .controls .plus,
-.bottom-right-container .controls .minus {
-  width: 100%;
-  height: 16.6vh;
-}
-.bottom-right-container .controls .minus i {
-  transform: rotate(90deg);
-}
-.bottom-right-container .controls .middle {
+.bottom-right-container p {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 16.6vh;
-}
-.bottom-right-container .controls .middle p {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  transform: rotate(-90deg);
+}
+.bottom-right-container i {
   transform: rotate(-90deg);
 }
 
@@ -231,25 +210,25 @@ i {
 #span-left {
   position: absolute;
   border: 1px solid;
-  width: 40%;
+  width: 50%;
   top: 50%;
-  right: 58%;
+  right: 56%;
 }
 
 #span-right {
   position: absolute;
   border: 1px solid;
-  width: 40%;
+  width: 48%;
   top: 50%;
-  left: 58%;
+  left: 52%;
 }
 
 #span-top {
   position: absolute;
   border: 1px solid;
-  height: 44%;
-  top: 1.5%;
-  left: 49.7%;
+  height: 48%;
+  top: 0;
+  left: 50%;
 }
 
 #span-bottom {
@@ -257,7 +236,7 @@ i {
   border: 1px solid;
   height: 44%;
   bottom: 1.5%;
-  left: 49.7%;
+  left: 50%;
 }
 
 .fa-circle-info {
