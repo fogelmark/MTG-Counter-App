@@ -18,6 +18,12 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin gear {
+  position: absolute;
+  padding: .5rem;
+  box-shadow: none;
+}
+
 $dark-red: #85182A;
 $light-red: #B21E35;
 $dark-green: #2D6A4F;
@@ -50,6 +56,32 @@ $light-white: #FFFAE5;
 
 i {
   box-shadow: 3px 3px 3px #00000036;
+}
+
+.top-left-container {
+  .fa-gear {
+    @include gear;
+    left: 41%;
+  }
+}
+
+.top-right-container {
+  .fa-gear {
+    @include gear;
+  }
+}
+.bottom-left-container {
+  .fa-gear {
+    @include gear;
+    bottom: 0;
+    left: 41%;
+  }
+}
+.bottom-right-container {
+  .fa-gear {
+    @include gear;
+    bottom: 0;
+  }
 }
 
 .middle-button {
