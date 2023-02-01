@@ -61,7 +61,7 @@ i {
 .top-left-container {
   .fa-gear {
     @include gear;
-    left: 41%;
+    // left: 46.5vw;
   }
 }
 
@@ -74,7 +74,7 @@ i {
   .fa-gear {
     @include gear;
     bottom: 0;
-    left: 41%;
+    // left: 41%;
   }
 }
 .bottom-right-container {
