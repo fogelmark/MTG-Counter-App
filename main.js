@@ -31,13 +31,16 @@ const closeModal = () => {
   overlay.classList.add("hidden");
 };
 
+// TBD, FATTA timeout-id...
+let timeout = null;
+
 const debounce = (timeoutId, functionToRun, time) => {
-  if (timeoutId !== null) {
-    clearTimeout(timeoutId)
+  if (timeout !== null) {
+    clearTimeout(timeout)
   }
 
-  timeoutId = setTimeout(() => {
-    timeoutId = null;
+  timeout = setTimeout(() => {
+    timeout = null;
     functionToRun()
   }, time);
 }
@@ -52,9 +55,13 @@ const countClicks = (initiator) => {
 
   counterToChange.textContent++
   
-  debounce(clickedArea, () => {
-    counterToChange.style.opacity = 0;
-    counterToChange.textContent = 0;
+  //RESET
+  debounce(clickedArea.classList[0], () => {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counter.style.opacity = 0;
+      counter.textContent = 0;
+    })
   }, 3000)
 }
 
