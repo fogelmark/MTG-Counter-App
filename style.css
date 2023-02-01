@@ -21,6 +21,32 @@ i {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2117647059);
 }
 
+.top-left-container .fa-gear {
+  position: absolute;
+  padding: 0.5rem;
+  box-shadow: none;
+}
+
+.top-right-container .fa-gear {
+  position: absolute;
+  padding: 0.5rem;
+  box-shadow: none;
+}
+
+.bottom-left-container .fa-gear {
+  position: absolute;
+  padding: 0.5rem;
+  box-shadow: none;
+  bottom: 0;
+}
+
+.bottom-right-container .fa-gear {
+  position: absolute;
+  padding: 0.5rem;
+  box-shadow: none;
+  bottom: 0;
+}
+
 .middle-button {
   display: flex;
   justify-content: center;
@@ -171,6 +197,10 @@ i {
       -ms-user-select: none;
           user-select: none;
   touch-action: manipulation;
+}
+
+body {
+  overflow: hidden;
 }
 
 .wrapper {
