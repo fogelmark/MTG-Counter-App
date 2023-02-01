@@ -10,13 +10,14 @@ const openModalBtn = document.querySelector('.middle-button');
 increment.forEach((plus, index) => {
   plus.addEventListener('click', () => {
     health[index].textContent++
-    // TBD - Fixa funktion som visar antalet positiva/negativa clicks.
+    countClicks(plus)
   })
 })
 
 decrement.forEach((minus, index) => {
   minus.addEventListener('click', () => {
     health[index].textContent--
+    countClicks(minus)
   })
 })
 
@@ -29,6 +30,40 @@ const closeModal = () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
+
+// TBD, FATTA timeout-id...
+let timeout = null;
+
+const debounce = (timeoutId, functionToRun, time) => {
+  if (timeout !== null) {
+    clearTimeout(timeout)
+  }
+
+  timeout = setTimeout(() => {
+    timeout = null;
+    functionToRun()
+  }, time);
+}
+
+const countClicks = (initiator) => {
+  const clickedArea = initiator.parentElement.parentElement;
+  const counterToChange = clickedArea.querySelector('.counter')
+
+  if (counterToChange.style.opacity !== 1) {
+    counterToChange.style.opacity = 1;
+  }
+
+  counterToChange.textContent++
+  
+  //RESET
+  debounce(clickedArea.classList[0], () => {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counter.style.opacity = 0;
+      counter.textContent = 0;
+    })
+  }, 3000)
+}
 
 openModalBtn.addEventListener("click", openModal);
 overlay.addEventListener("click", closeModal);
