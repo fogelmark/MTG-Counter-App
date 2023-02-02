@@ -59,25 +59,29 @@ i {
 }
 
 .top-left-container {
+  position: relative;
   .fa-gear {
     @include gear;
-    // left: 46.5vw;
+    right: 0;
   }
 }
 
 .top-right-container {
+  position: relative;
   .fa-gear {
     @include gear;
   }
 }
 .bottom-left-container {
+  position: relative;
   .fa-gear {
     @include gear;
     bottom: 0;
-    // left: 41%;
+    right: 0;
   }
 }
 .bottom-right-container {
+  position: relative;
   .fa-gear {
     @include gear;
     bottom: 0;
