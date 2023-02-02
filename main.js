@@ -47,13 +47,21 @@ const debounce = (timeoutId, functionToRun, time) => {
 
 const countClicks = (initiator) => {
   const clickedArea = initiator.parentElement.parentElement;
+  
   const counterToChange = clickedArea.querySelector('.counter')
-
+  
   if (counterToChange.style.opacity !== 1) {
     counterToChange.style.opacity = 1;
   }
+  
+  if (initiator.classList.contains('minus')) {
+    counterToChange.textContent--
+  }
+  if (initiator.classList.contains('plus')) {
+    counterToChange.textContent++
+  }
 
-  counterToChange.textContent++
+  // counterToChange.textContent++
   
   //RESET
   debounce(clickedArea.classList[0], () => {

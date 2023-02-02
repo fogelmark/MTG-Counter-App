@@ -21,25 +21,39 @@ i {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2117647059);
 }
 
+.top-left-container {
+  position: relative;
+}
 .top-left-container .fa-gear {
   position: absolute;
   padding: 0.5rem;
   box-shadow: none;
+  right: 0;
 }
 
+.top-right-container {
+  position: relative;
+}
 .top-right-container .fa-gear {
   position: absolute;
   padding: 0.5rem;
   box-shadow: none;
 }
 
+.bottom-left-container {
+  position: relative;
+}
 .bottom-left-container .fa-gear {
   position: absolute;
   padding: 0.5rem;
   box-shadow: none;
   bottom: 0;
+  right: 0;
 }
 
+.bottom-right-container {
+  position: relative;
+}
 .bottom-right-container .fa-gear {
   position: absolute;
   padding: 0.5rem;
