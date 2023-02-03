@@ -8,41 +8,48 @@ const overlay = document.querySelector('.overlay');
 const openModalBtn = document.querySelector('.middle-button');
 const gearIcon = document.querySelectorAll('.gear-icon')
 const manaSymbol = document.querySelectorAll('img')
-const topLeft = document.querySelector('.top-left-container')
-const controls = document.querySelector('.controls')
 const manaDisplay = document.querySelectorAll('.color-picker')
+const containers = document.querySelectorAll('.container')
+console.log(containers);
 
 const redBackground = `
-  background: linear-gradient(-90deg, #85182A, #B21E35);
+  background: linear-gradient(#85182A, #B21E35);
   color: #fff;
 `;
 const blueBackground = `
-  background: linear-gradient(-90deg, #0077B6, #00B4D8);
+  background: linear-gradient(#0077B6, #00B4D8);
   color: #fff;
 `;
 const blackBackground = `
-  background: linear-gradient(-90deg, #343A40, #6C757D);
+  background: linear-gradient(#343A40, #6C757D);
   color: #fff;
 `;
 const greenBackground = `
-  background: linear-gradient(-90deg, #2D6A4F, #52B788);
+  background: linear-gradient(#2D6A4F, #52B788);
   color: #fff;
 `;
 const whiteBackground = `
-  background: linear-gradient(-90deg, #FFF2B2, #FFFAE5);
+  background: linear-gradient(#FFF2B2, #FFFAE5);
   color: #000;
 `;
 
+const negativeDeg = `
+  transform: rotate(-90deg);
+`
+const positiveDeg = `
+  transform: rotate(90deg);
+`
+
 gearIcon.forEach((icon, index) => {
-  icon.addEventListener('click', () => {
+  icon.addEventListener('click', e => {
     manaDisplay[index].classList.toggle('hidden')
   })
   
   manaSymbol.forEach(image => {
     image.addEventListener('click', e => {
-  
-      const container = image.parentElement.parentElement
-  
+      
+      const container = image.parentElement.parentElement      
+
       if (e.target.classList.contains('red')) {
         container.style.cssText = redBackground
         icon.previousElementSibling.classList.add('hidden')
