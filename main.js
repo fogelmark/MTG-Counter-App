@@ -6,6 +6,66 @@ const counter = document.querySelector('.counter')
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const openModalBtn = document.querySelector('.middle-button');
+const gearIcon = document.querySelectorAll('.gear-icon')
+const manaSymbol = document.querySelectorAll('img')
+const topLeft = document.querySelector('.top-left-container')
+const controls = document.querySelector('.controls')
+const manaDisplay = document.querySelectorAll('.color-picker')
+
+const redBackground = `
+  background: linear-gradient(-90deg, #85182A, #B21E35);
+  color: #fff;
+`;
+const blueBackground = `
+  background: linear-gradient(-90deg, #0077B6, #00B4D8);
+  color: #fff;
+`;
+const blackBackground = `
+  background: linear-gradient(-90deg, #343A40, #6C757D);
+  color: #fff;
+`;
+const greenBackground = `
+  background: linear-gradient(-90deg, #2D6A4F, #52B788);
+  color: #fff;
+`;
+const whiteBackground = `
+  background: linear-gradient(-90deg, #FFF2B2, #FFFAE5);
+  color: #000;
+`;
+
+gearIcon.forEach((icon, index) => {
+  icon.addEventListener('click', () => {
+    manaDisplay[index].classList.toggle('hidden')
+  })
+  
+  manaSymbol.forEach(image => {
+    image.addEventListener('click', e => {
+  
+      const container = image.parentElement.parentElement
+  
+      if (e.target.classList.contains('red')) {
+        container.style.cssText = redBackground
+        icon.previousElementSibling.classList.add('hidden')
+      }
+      if (e.target.classList.contains('blue')) {
+        container.style.cssText = blueBackground
+        icon.previousElementSibling.classList.add('hidden')
+      }
+      if (e.target.classList.contains('black')) {
+        container.style.cssText = blackBackground
+        icon.previousElementSibling.classList.add('hidden')
+      }
+      if (e.target.classList.contains('green')) {
+        container.style.cssText = greenBackground
+        icon.previousElementSibling.classList.add('hidden')
+      }
+      if (e.target.classList.contains('white')) {
+        container.style.cssText = whiteBackground
+        icon.previousElementSibling.classList.add('hidden')
+      }
+    })
+  })
+})
 
 increment.forEach((plus, index) => {
   plus.addEventListener('click', () => {
@@ -20,16 +80,6 @@ decrement.forEach((minus, index) => {
     countClicks(minus)
   })
 })
-
-const openModal = () => {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = () => {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
 
 // TBD, FATTA timeout-id...
 let timeout = null;
@@ -60,8 +110,6 @@ const countClicks = (initiator) => {
   if (initiator.classList.contains('plus')) {
     counterToChange.textContent++
   }
-
-  // counterToChange.textContent++
   
   //RESET
   debounce(clickedArea.classList[0], () => {
@@ -73,5 +121,17 @@ const countClicks = (initiator) => {
   }, 3000)
 }
 
+const openModal = () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = () => {
+
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
 openModalBtn.addEventListener("click", openModal);
 overlay.addEventListener("click", closeModal);
+

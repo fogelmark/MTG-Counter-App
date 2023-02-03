@@ -114,9 +114,15 @@ i {
 .top-left-container p.counter, .bottom-left-container p.counter {
   left: 2rem;
 }
+.top-left-container img, .bottom-left-container img {
+  transform: rotate(90deg);
+}
 
 .top-right-container p.counter, .bottom-right-container p.counter {
   right: 2rem;
+}
+.top-right-container img, .bottom-right-container img {
+  transform: rotate(-90deg);
 }
 
 .top-left-container {
@@ -169,6 +175,20 @@ i {
 }
 .bottom-right-container i {
   transform: rotate(-90deg);
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  width: 100%;
+  height: 50vh;
+  opacity: 80%;
+}
+.color-picker img {
+  width: 3rem;
 }
 
 .modal {
