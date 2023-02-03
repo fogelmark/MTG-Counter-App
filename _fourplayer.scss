@@ -137,11 +137,17 @@ i {
   p.counter {
     left: 2rem;
   }
+  img {
+    transform: rotate(90deg);
+  }
 }
 
 .top-right-container, .bottom-right-container {
   p.counter {
     right: 2rem;
+  }
+  img {
+    transform: rotate(-90deg);
   }
 }
 
@@ -182,6 +188,20 @@ i {
   }
   i {
     transform: rotate(-90deg);
+  }
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  width: 100%;
+  height: 50vh;
+  opacity: 80%;
+  img {
+    width: 3rem;
   }
 }
 
