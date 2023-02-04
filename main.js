@@ -1,76 +1,67 @@
-const output = document.querySelector('.output')
+// import _fourplayer from './_fourplayer.scss';
+
 const health = document.querySelectorAll('.life')
 const increment = document.querySelectorAll('.plus')
 const decrement = document.querySelectorAll('.minus')
-const counter = document.querySelector('.counter')
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const openModalBtn = document.querySelector('.middle-button');
 const gearIcon = document.querySelectorAll('.gear-icon')
 const manaSymbol = document.querySelectorAll('img')
 const manaDisplay = document.querySelectorAll('.color-picker')
-const containers = document.querySelectorAll('.container')
-console.log(containers);
 
 const redBackground = `
-  background: linear-gradient(#85182A, #B21E35);
+  background: linear-gradient(to left, #85182A, #B21E35);
   color: #fff;
 `;
 const blueBackground = `
-  background: linear-gradient(#0077B6, #00B4D8);
+  background: linear-gradient(to left, #0077B6, #00B4D8);
   color: #fff;
 `;
 const blackBackground = `
-  background: linear-gradient(#343A40, #6C757D);
+  background: linear-gradient(to left, #343A40, #6C757D);
   color: #fff;
 `;
 const greenBackground = `
-  background: linear-gradient(#2D6A4F, #52B788);
+  background: linear-gradient(to left, #2D6A4F, #52B788);
   color: #fff;
 `;
 const whiteBackground = `
-  background: linear-gradient(#FFF2B2, #FFFAE5);
+  background: linear-gradient(to left, #FFF2B2, #FFFAE5);
   color: #000;
 `;
-
-const negativeDeg = `
-  transform: rotate(-90deg);
-`
-const positiveDeg = `
-  transform: rotate(90deg);
-`
 
 gearIcon.forEach((icon, index) => {
   icon.addEventListener('click', e => {
     manaDisplay[index].classList.toggle('hidden')
   })
-  
-  manaSymbol.forEach(image => {
-    image.addEventListener('click', e => {
-      
-      const container = image.parentElement.parentElement      
+})
 
-      if (e.target.classList.contains('red')) {
-        container.style.cssText = redBackground
-        icon.previousElementSibling.classList.add('hidden')
-      }
-      if (e.target.classList.contains('blue')) {
-        container.style.cssText = blueBackground
-        icon.previousElementSibling.classList.add('hidden')
-      }
-      if (e.target.classList.contains('black')) {
-        container.style.cssText = blackBackground
-        icon.previousElementSibling.classList.add('hidden')
-      }
-      if (e.target.classList.contains('green')) {
-        container.style.cssText = greenBackground
-        icon.previousElementSibling.classList.add('hidden')
-      }
-      if (e.target.classList.contains('white')) {
-        container.style.cssText = whiteBackground
-        icon.previousElementSibling.classList.add('hidden')
-      }
-    })
+manaSymbol.forEach(image => {
+  image.addEventListener('click', e => {
+    
+    const container = image.parentElement.parentElement
+
+    if (e.target.classList.contains('red')) {
+      container.style.cssText = redBackground
+      container.firstElementChild.classList.add('hidden')
+    }
+    if (e.target.classList.contains('blue')) {
+      container.style.cssText = blueBackground
+      container.firstElementChild.classList.add('hidden')
+    }
+    if (e.target.classList.contains('black')) {
+      container.style.cssText = blackBackground
+      container.firstElementChild.classList.add('hidden')
+    }
+    if (e.target.classList.contains('green')) {
+      container.style.cssText = greenBackground
+      container.firstElementChild.classList.add('hidden')
+    }
+    if (e.target.classList.contains('white')) {
+      container.style.cssText = whiteBackground
+      container.firstElementChild.classList.add('hidden')
+    }
   })
 })
 
