@@ -24,16 +24,41 @@
   box-shadow: none;
 }
 
-$dark-red: #85182A;
-$light-red: #B21E35;
-$dark-green: #2D6A4F;
-$light-green: #52B788;
-$dark-blue: #0077B6;
-$light-blue: #00B4D8;
-$dark-black: #343A40;
-$light-black: #6C757D;
-$dark-white: #FFF2B2;
-$light-white: #FFFAE5;
+// $dark-red: #85182A;
+// $light-red: #B21E35;
+// $dark-green: #2D6A4F;
+// $light-green: #52B788;
+// $dark-blue: #0077B6;
+// $light-blue: #00B4D8;
+// $dark-black: #343A40;
+// $light-black: #6C757D;
+// $dark-white: #FFF2B2;
+// $light-white: #FFFAE5;
+
+$backround-blue-left: linear-gradient(to left, #0077B6, #00B4D8);
+$background-green-left: linear-gradient(to left, #2D6A4F, #52B788);
+$background-red-left: linear-gradient(to left, #85182A, #B21E35);
+$background-black-left: linear-gradient(to left, #343A40, #6C757D);
+$background-white-left: linear-gradient(to left, #FFF2B2, #FFFAE5);
+
+$backround-blue-right: linear-gradient(to right, #0077B6, #00B4D8);
+$background-green-right: linear-gradient(to right, #2D6A4F, #52B788);
+$background-red-right: linear-gradient(to right, #85182A, #B21E35);
+$background-black-right: linear-gradient(to right, #343A40, #6C757D);
+$background-white-right: linear-gradient(to right, #FFF2B2, #FFFAE5);
+
+// :export {
+//   backgroundGreenLeft: $background-green-left;
+//   backgroundRedLeft: $background-red-left;
+//   backgroundBlueLeft: $backround-blue-left;
+//   backgroundBlackLeft: $background-black-left;
+//   backgroundWhiteLeft: $background-white-left;
+//   backgroundGreenRight: $background-green-right;
+//   backgroundRedRight: $background-red-right;
+//   backgroundBlueRight: $backround-blue-right;
+//   backgroundBlackRight: $background-black-right;
+//   backgroundWhiteRight: $background-white-right;
+// }
 
 .top-content,
 .bottom-content {
@@ -91,11 +116,10 @@ i {
 .middle-button {
   @include flex(center, center);
   @include middle-button();
-  background-color: black;
+  background-image: url(/images/mtglogo-colored.png);
+  background-size: cover;
   color: #fff;
   border: none;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   padding: 1.3rem;
   z-index: 1;
@@ -152,7 +176,7 @@ i {
 }
 
 .top-left-container {
-  background: linear-gradient(-90deg, $dark-blue, $light-blue);
+  background: $backround-blue-left;
   p {
     @include life-text(center, center, 90deg)
   }
@@ -162,7 +186,7 @@ i {
 }
 
 .top-right-container {
-  background: linear-gradient(90deg, $dark-black, $light-black);
+  background: $background-black-right;
   p {
     @include life-text(center, center, -90deg)
   }
@@ -172,7 +196,7 @@ i {
 }
 
 .bottom-left-container {
-  background: linear-gradient(-90deg, $dark-red, $light-red);
+  background: $background-red-left;
   p {
     @include life-text(center, center, 90deg)
   }
@@ -182,7 +206,7 @@ i {
 }
 
 .bottom-right-container {
-  background: linear-gradient(90deg, $dark-green, $light-green);
+  background: $background-green-right;
   p {
     @include life-text(center, center, -90deg)
   }

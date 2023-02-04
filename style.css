@@ -69,11 +69,10 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-image: url(/images/mtglogo-colored.png);
+  background-size: cover;
   color: #fff;
   border: none;
-  width: 30px;
-  height: 30px;
   border-radius: 50%;
   padding: 1.3rem;
   z-index: 1;
@@ -126,7 +125,7 @@ i {
 }
 
 .top-left-container {
-  background: linear-gradient(-90deg, #0077B6, #00B4D8);
+  background: linear-gradient(to left, #0077B6, #00B4D8);
 }
 .top-left-container p {
   display: flex;
@@ -139,7 +138,7 @@ i {
 }
 
 .top-right-container {
-  background: linear-gradient(90deg, #343A40, #6C757D);
+  background: linear-gradient(to right, #343A40, #6C757D);
 }
 .top-right-container p {
   display: flex;
@@ -152,7 +151,7 @@ i {
 }
 
 .bottom-left-container {
-  background: linear-gradient(-90deg, #85182A, #B21E35);
+  background: linear-gradient(to left, #85182A, #B21E35);
 }
 .bottom-left-container p {
   display: flex;
@@ -165,7 +164,7 @@ i {
 }
 
 .bottom-right-container {
-  background: linear-gradient(90deg, #2D6A4F, #52B788);
+  background: linear-gradient(to right, #2D6A4F, #52B788);
 }
 .bottom-right-container p {
   display: flex;
