@@ -29,6 +29,7 @@ i {
   padding: 0.5rem;
   box-shadow: none;
   right: 0;
+  top: 0;
 }
 
 .top-right-container {
@@ -38,6 +39,7 @@ i {
   position: absolute;
   padding: 0.5rem;
   box-shadow: none;
+  top: 0;
 }
 
 .bottom-left-container {
