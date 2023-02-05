@@ -1,5 +1,3 @@
-// import _fourplayer from './_fourplayer.scss';
-
 const health = document.querySelectorAll('.life')
 const increment = document.querySelectorAll('.plus')
 const decrement = document.querySelectorAll('.minus')
@@ -9,27 +7,54 @@ const openModalBtn = document.querySelector('.middle-button');
 const gearIcon = document.querySelectorAll('.gear-icon')
 const manaSymbol = document.querySelectorAll('img')
 const manaDisplay = document.querySelectorAll('.color-picker')
+const resetSymbol = document.querySelector('.fa-arrow-rotate-right')
 
-const redBackground = `
+const redToLeft = `
   background: linear-gradient(to left, #85182A, #B21E35);
   color: #fff;
 `;
-const blueBackground = `
+const redToRight = `
+  background: linear-gradient(to right, #85182A, #B21E35);
+  color: #fff;
+`;
+const blueToLeft = `
   background: linear-gradient(to left, #0077B6, #00B4D8);
   color: #fff;
 `;
-const blackBackground = `
+const blueToRight = `
+  background: linear-gradient(to right, #0077B6, #00B4D8);
+  color: #fff;
+`;
+const blackToLeft = `
   background: linear-gradient(to left, #343A40, #6C757D);
   color: #fff;
 `;
-const greenBackground = `
+const blackToRight = `
+  background: linear-gradient(to right, #343A40, #6C757D);
+  color: #fff;
+`;
+const greenToLeft = `
   background: linear-gradient(to left, #2D6A4F, #52B788);
   color: #fff;
 `;
-const whiteBackground = `
+const greenToRight = `
+  background: linear-gradient(to right, #2D6A4F, #52B788);
+  color: #fff;
+`;
+const whiteToLeft = `
   background: linear-gradient(to left, #FFF2B2, #FFFAE5);
   color: #000;
 `;
+const whiteToRight = `
+  background: linear-gradient(to right, #FFF2B2, #FFFAE5);
+  color: #000;
+`;
+
+resetSymbol.addEventListener('click', () => {
+  health.forEach(number => {
+    number.textContent = 40
+  })
+})
 
 gearIcon.forEach((icon, index) => {
   icon.addEventListener('click', e => {
@@ -42,25 +67,46 @@ manaSymbol.forEach(image => {
     
     const container = image.parentElement.parentElement
 
-    if (e.target.classList.contains('red')) {
-      container.style.cssText = redBackground
+    // Byt backgrundsfärg
+    if (e.target.classList.contains('red') && container.classList.contains('right')) {
       container.firstElementChild.classList.add('hidden')
+      container.style.cssText = redToRight
     }
-    if (e.target.classList.contains('blue')) {
-      container.style.cssText = blueBackground
+    if (e.target.classList.contains('red') && !container.classList.contains('right')) {
       container.firstElementChild.classList.add('hidden')
+      container.style.cssText = redToLeft
     }
-    if (e.target.classList.contains('black')) {
-      container.style.cssText = blackBackground
+    if (e.target.classList.contains('blue') && container.classList.contains('right')) {
       container.firstElementChild.classList.add('hidden')
+      container.style.cssText = blueToRight
     }
-    if (e.target.classList.contains('green')) {
-      container.style.cssText = greenBackground
+    if (e.target.classList.contains('blue') && !container.classList.contains('right')) {
       container.firstElementChild.classList.add('hidden')
+      container.style.cssText = blueToLeft
     }
-    if (e.target.classList.contains('white')) {
-      container.style.cssText = whiteBackground
+    if (e.target.classList.contains('black') && container.classList.contains('right')) {
       container.firstElementChild.classList.add('hidden')
+      container.style.cssText = blackToRight
+    }
+    if (e.target.classList.contains('black') && !container.classList.contains('right')) {
+      container.firstElementChild.classList.add('hidden')
+      container.style.cssText = blackToLeft
+    }
+    if (e.target.classList.contains('green') && container.classList.contains('right')) {
+      container.firstElementChild.classList.add('hidden')
+      container.style.cssText = greenToRight
+    }
+    if (e.target.classList.contains('green') && !container.classList.contains('right')) {
+      container.firstElementChild.classList.add('hidden')
+      container.style.cssText = greenToLeft
+    }
+    if (e.target.classList.contains('white') && container.classList.contains('right')) {
+      container.firstElementChild.classList.add('hidden')
+      container.style.cssText = whiteToRight
+    }
+    if (e.target.classList.contains('white') && !container.classList.contains('right')) {
+      container.firstElementChild.classList.add('hidden')
+      container.style.cssText = whiteToLeft
     }
   })
 })

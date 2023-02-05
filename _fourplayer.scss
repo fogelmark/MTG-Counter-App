@@ -47,19 +47,6 @@ $background-red-right: linear-gradient(to right, #85182A, #B21E35);
 $background-black-right: linear-gradient(to right, #343A40, #6C757D);
 $background-white-right: linear-gradient(to right, #FFF2B2, #FFFAE5);
 
-// :export {
-//   backgroundGreenLeft: $background-green-left;
-//   backgroundRedLeft: $background-red-left;
-//   backgroundBlueLeft: $backround-blue-left;
-//   backgroundBlackLeft: $background-black-left;
-//   backgroundWhiteLeft: $background-white-left;
-//   backgroundGreenRight: $background-green-right;
-//   backgroundRedRight: $background-red-right;
-//   backgroundBlueRight: $backround-blue-right;
-//   backgroundBlackRight: $background-black-right;
-//   backgroundWhiteRight: $background-white-right;
-// }
-
 .top-content,
 .bottom-content {
   display: flex;
@@ -77,11 +64,11 @@ $background-white-right: linear-gradient(to right, #FFF2B2, #FFFAE5);
   text-shadow: 3px 3px 3px #00000036;
   border: 1px solid black;
   overflow: hidden;
+  i {
+    box-shadow: 3px 3px 3px #00000036;
+  }
 }
 
-i {
-  box-shadow: 3px 3px 3px #00000036;
-}
 
 .top-left-container {
   position: relative;
