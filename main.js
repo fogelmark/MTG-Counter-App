@@ -50,12 +50,6 @@ const whiteToRight = `
   color: #000;
 `;
 
-resetSymbol.addEventListener('click', () => {
-  health.forEach(number => {
-    number.textContent = 40
-  })
-})
-
 gearIcon.forEach((icon, index) => {
   icon.addEventListener('click', e => {
     manaDisplay[index].classList.toggle('hidden')
@@ -165,17 +159,24 @@ const countClicks = (initiator) => {
   }, 3000)
 }
 
+
 const openModal = () => {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 };
 
 const closeModal = () => {
-
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
 };
 
-openModalBtn.addEventListener("click", openModal);
-overlay.addEventListener("click", closeModal);
+resetSymbol.addEventListener('click', () => {
+  closeModal()
+  health.forEach(number => {
+    number.textContent = 40
+  })
+})
+
+openModalBtn.addEventListener('click', openModal);
+overlay.addEventListener('click', closeModal);
 
