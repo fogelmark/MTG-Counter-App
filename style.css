@@ -28,7 +28,7 @@
 }
 .top-left-container .fa-gear {
   position: absolute;
-  padding: 0.5rem;
+  padding: 1rem;
   box-shadow: none;
   right: 0;
   top: 0;
@@ -39,7 +39,7 @@
 }
 .top-right-container .fa-gear {
   position: absolute;
-  padding: 0.5rem;
+  padding: 1rem;
   box-shadow: none;
   top: 0;
 }
@@ -49,7 +49,7 @@
 }
 .bottom-left-container .fa-gear {
   position: absolute;
-  padding: 0.5rem;
+  padding: 1rem;
   box-shadow: none;
   bottom: 0;
   right: 0;
@@ -60,7 +60,7 @@
 }
 .bottom-right-container .fa-gear {
   position: absolute;
-  padding: 0.5rem;
+  padding: 1rem;
   box-shadow: none;
   bottom: 0;
 }
