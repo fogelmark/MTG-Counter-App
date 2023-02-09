@@ -9,46 +9,33 @@ const manaSymbol = document.querySelectorAll('img')
 const manaDisplay = document.querySelectorAll('.color-picker')
 const resetSymbol = document.querySelector('.fa-arrow-rotate-right')
 
-const redToLeft = `
-  background: linear-gradient(to left, #85182A, #B21E35);
-  color: #fff;
-`;
-const redToRight = `
-  background: linear-gradient(to right, #85182A, #B21E35);
-  color: #fff;
-`;
-const blueToLeft = `
-  background: linear-gradient(to left, #0077B6, #00B4D8);
-  color: #fff;
-`;
-const blueToRight = `
-  background: linear-gradient(to right, #0077B6, #00B4D8);
-  color: #fff;
-`;
-const blackToLeft = `
-  background: linear-gradient(to left, #343A40, #6C757D);
-  color: #fff;
-`;
-const blackToRight = `
-  background: linear-gradient(to right, #343A40, #6C757D);
-  color: #fff;
-`;
-const greenToLeft = `
-  background: linear-gradient(to left, #2D6A4F, #52B788);
-  color: #fff;
-`;
-const greenToRight = `
-  background: linear-gradient(to right, #2D6A4F, #52B788);
-  color: #fff;
-`;
-const whiteToLeft = `
-  background: linear-gradient(to left, #FFF2B2, #FFFAE5);
-  color: #000;
-`;
-const whiteToRight = `
-  background: linear-gradient(to right, #FFF2B2, #FFFAE5);
-  color: #000;
-`;
+const colors = [
+  {
+    name: 'red',
+    gradient: ['#85182A', '#B21E35'],
+    textColor: '#fff'
+  },
+  {
+    name: 'blue',
+    gradient: ['#0077B6', '#00B4D8'],
+    textColor: '#fff'
+  },
+  {
+    name: 'black',
+    gradient: ['#343A40', '#6C757D'],
+    textColor: '#fff'
+  },
+  {
+    name: 'green',
+    gradient: ['#2D6A4F', '#52B788'],
+    textColor: '#fff'
+  },
+  {
+    name: 'white',
+    gradient: ['#FFF2B2', '#FFFAE5'],
+    textColor: '#000'
+  },
+]
 
 gearIcon.forEach((icon, index) => {
   icon.addEventListener('click', e => {
@@ -60,48 +47,14 @@ manaSymbol.forEach(image => {
   image.addEventListener('click', e => {
     
     const container = image.parentElement.parentElement
+    container.firstElementChild.classList.add('hidden')
 
     // Byt backgrundsfärg
-    if (e.target.classList.contains('red') && container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = redToRight
-    }
-    if (e.target.classList.contains('red') && !container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = redToLeft
-    }
-    if (e.target.classList.contains('blue') && container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = blueToRight
-    }
-    if (e.target.classList.contains('blue') && !container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = blueToLeft
-    }
-    if (e.target.classList.contains('black') && container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = blackToRight
-    }
-    if (e.target.classList.contains('black') && !container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = blackToLeft
-    }
-    if (e.target.classList.contains('green') && container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = greenToRight
-    }
-    if (e.target.classList.contains('green') && !container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = greenToLeft
-    }
-    if (e.target.classList.contains('white') && container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = whiteToRight
-    }
-    if (e.target.classList.contains('white') && !container.classList.contains('right')) {
-      container.firstElementChild.classList.add('hidden')
-      container.style.cssText = whiteToLeft
-    }
+    const color = colors.find(color => color.name === e.target.classList[0]);
+    container.style.setProperty("--color-1", color.gradient[0]);
+    container.style.setProperty("--color-2", color.gradient[1]);
+    container.style.color = color.textColor;
+
   })
 })
 
