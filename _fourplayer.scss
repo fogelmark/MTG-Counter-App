@@ -20,7 +20,7 @@
 
 @mixin gear {
   position: absolute;
-  padding: 1rem;
+  padding: .5rem;
   box-shadow: none;
 }
 
@@ -39,7 +39,7 @@
   height: 50vh;
   color: #f8f6e8;
   text-shadow: 3px 3px 3px #00000036;
-  border: 1px solid black;
+  // border: 1px solid black;
   overflow: hidden;
 
   i {
@@ -53,11 +53,13 @@
   --color-2: var(--light-black);
   background: linear-gradient(to left, var(--color-1), var(--color-2));
   position: relative;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
 
   .fa-gear {
     @include gear;
-    right: 0;
-    top: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 
@@ -66,10 +68,13 @@
   --color-2: var(--light-blue);
   background: linear-gradient(to right, var(--color-1), var(--color-2));
   position: relative;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
 
   .fa-gear {
     @include gear;
-    top: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
@@ -77,13 +82,14 @@
   --color-1: var(--dark-red);
   --color-2: var(--light-red);
   background: linear-gradient(to left, var(--color-1), var(--color-2));
-
   position: relative;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
 
   .fa-gear {
     @include gear;
-    bottom: 0;
-    right: 0;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -91,12 +97,14 @@
   --color-1: var(--dark-green);
   --color-2: var(--light-green);
   background: linear-gradient(to right, var(--color-1), var(--color-2));
-
   position: relative;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
 
   .fa-gear {
     @include gear;
-    bottom: 0;
+    top: 0;
+    right: 0;
   }
 }
 
